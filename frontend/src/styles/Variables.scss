@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap");
 
 $primary: #03e1e5;
 $black: #000000;
 $warn: #dfa612;
-$fontFamilyP: 'Lato', sans-serif;
-$fontFamilyT: 'Oswald', sans-serif;
-$fontSizeT : clamp(2rem, 6vw, 10rem);
+$fontFamilyP: "Lato", sans-serif;
+$fontFamilyT: "Oswald", sans-serif;
+$fontSizeT: clamp(2rem, 6vw, 10rem);
 
 :root {
   --primary: #{$primary};
   --black: #{$black};
   --font-family-p: #{$fontFamilyP};
   --font-family-t: #{$fontFamilyT};
-    --font-size-title: #{$fontSizeT};
+  --font-size-title: #{$fontSizeT};
 }

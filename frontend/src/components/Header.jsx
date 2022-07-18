@@ -1,14 +1,14 @@
-import React from 'react';
-import "@styles/Header.scss";
+import React from "react";
 import smoke from "@assets/videos/smoke.mp4";
+import "@styles/Header.scss";
 
-const Header = () => {
+function Header() {
   return (
-    <section id='header-part'>
-        <video src={smoke} autoPlay muted loop ></video>
-        <h1>Ecole des danses actuelles</h1>
+    <section id="header-part">
+      <video src={smoke} autoPlay muted loop />
+      <h1>Ecole des danses actuelles</h1>
     </section>
-  )
+  );
 }
 
-export default Header
+export default Header;

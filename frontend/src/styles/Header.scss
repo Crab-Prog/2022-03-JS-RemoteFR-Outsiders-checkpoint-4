@@ -1,8 +1,8 @@
-#header-part{
-    margin: 0 auto;
-    position: relative;
+#header-part {
+  margin: 0 auto;
+  position: relative;
 
-    h1{
+  h1 {
     color: white;
     font-size: var(--font-size-title);
     position: absolute;
@@ -11,17 +11,17 @@
     transform: translateY(-50%);
     text-align: center;
     letter-spacing: 0.3rem;
-    }
+  }
 }
 
-#header-part::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #f00, blue, #0f0);
-    mix-blend-mode: color;
-    pointer-events: none;
+#header-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f00, blue, #0f0);
+  mix-blend-mode: color;
+  pointer-events: none;
 }
