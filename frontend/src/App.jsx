@@ -11,6 +11,7 @@ import Locking from "@components/Locking";
 import NewSchool from "@components/NewSchool";
 import Dancehall from "@components/Dancehall";
 import Schedule from "@pages/Schedule";
+import Teachers from "@pages/Teachers";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cours_new-school" element={<NewSchool />} />
         <Route path="/cours_dancehall" element={<Dancehall />} />
         <Route path="/planning_tarifs" element={<Schedule />} />
+        <Route path="/intervenants" element={<Teachers />} />
       </Routes>
       <ToastContainer />
     </div>
