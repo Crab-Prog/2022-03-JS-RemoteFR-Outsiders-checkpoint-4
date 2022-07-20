@@ -1,16 +1,14 @@
 import React from "react";
 import YoutubeVideo from "@components/YoutubeVideo";
 import "@styles/Popping.scss";
+import yellow from "@assets/images/yellow.jpg";
 
 function Popping() {
   return (
     <section className="lessons-general flex flex-col items-center">
       <h1 className="text-8xl text-white pb-8">Popping</h1>
       <div className="popping-text">
-        <img
-          src="https://cdn.pixabay.com/photo/2019/03/28/17/08/man-4087543_960_720.jpg"
-          alt="popping man in yellow"
-        />
+        <img src={yellow} alt="popping man in yellow" />
         <p>
           Le Popping est une danse popularisée par les Electric Boogaloo’s dont
           le principe de base est la contraction et la décontraction des muscles

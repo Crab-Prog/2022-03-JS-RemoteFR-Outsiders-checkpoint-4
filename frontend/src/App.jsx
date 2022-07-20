@@ -7,6 +7,9 @@ import Navbar from "@components/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Popping from "@components/Popping";
+import Locking from "@components/Locking";
+import NewSchool from "@components/NewSchool";
+import Dancehall from "@components/Dancehall";
 
 function App() {
   return (
@@ -16,8 +19,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/inscription" element={<Inscription />} />
         <Route path="/cours_popping" element={<Popping />} />
-        {/* <Route path="/cours_locking" element={<Popping />} />
-        <Route path="/cours_street_lady" element={<Popping />} /> */}
+        <Route path="/cours_locking" element={<Locking />} />
+        <Route path="/cours_new-school" element={<NewSchool />} />
+        <Route path="/cours_dancehall" element={<Dancehall />} />
       </Routes>
       <ToastContainer />
     </div>
