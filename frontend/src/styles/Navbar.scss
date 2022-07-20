@@ -27,6 +27,11 @@
       width: 80%;
       height: 60px;
       letter-spacing: 0.1rem;
+
+      .drop-down-menu {
+        position: absolute;
+        z-index: 2;
+      }
     }
   }
 }
