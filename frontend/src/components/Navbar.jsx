@@ -4,6 +4,8 @@ import "@styles/Navbar.scss";
 
 import ExportContext from "@contexts/context";
 
+import { NavLink } from "react-router-dom";
+
 function Navbar() {
   const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
   return (
@@ -17,11 +19,9 @@ function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
         />
         <ul className={`${isOpen ? "navigation-bar " : "responsive_nav hide"}`}>
-          <li>
-            <a href="#accueil" className="hover-nav">
-              Accueil
-            </a>
-          </li>
+          <NavLink to="/" className="hover-nav">
+            <h1>Accueil</h1>
+          </NavLink>
           <li>
             <a href="#projects" className="hover-nav">
               Cours
@@ -37,11 +37,9 @@ function Navbar() {
               Contact
             </a>
           </li>
-          <li>
-            <a href="#projects" className="hover-nav">
-              Inscription
-            </a>
-          </li>
+          <NavLink to="/inscription" className="hover-nav">
+            <h1>Inscription</h1>
+          </NavLink>
         </ul>
       </nav>
     </div>

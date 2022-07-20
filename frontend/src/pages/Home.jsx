@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Header from "@components/Header";
-import Navbar from "@components/Navbar";
 import "@styles/Home.scss";
 
 import ExportContext from "@contexts/context";
@@ -26,7 +25,6 @@ export default function Home() {
 
   return (
     <header className={`${isOpen ? "home-header-alternative" : "home-header"}`}>
-      <Navbar />
       <Header />
       {/* {members.map((member) => {
         return(<p>{member.first_name}</p>)
