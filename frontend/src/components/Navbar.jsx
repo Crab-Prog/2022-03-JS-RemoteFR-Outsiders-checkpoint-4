@@ -9,9 +9,6 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
 
-  //   const handleRefresh = (e) => {
-  // e.target.preventDefault();
-  //   }
   return (
     <div className="menu-wrapper">
       <img src={logo} alt="" />
@@ -60,7 +57,6 @@ function Navbar() {
           </NavLink>
         </ul>
       </nav>
-      <hr />
     </div>
   );
 }
