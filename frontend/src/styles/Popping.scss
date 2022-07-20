@@ -1,0 +1,46 @@
+.lessons-general {
+  background-image: url("../assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  .popping-text:hover img {
+    opacity: 1;
+    transition: 0.8s;
+  }
+
+  .popping-text {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    max-width: 800px;
+    border: 1px solid white;
+
+    img {
+      width: 40%;
+      filter: drop-shadow(0 0 0.75rem white);
+      opacity: 0.3;
+      border: 1px solid white;
+      object-fit: cover;
+    }
+
+    p {
+      position: relative;
+      color: white;
+      width: 90%;
+      padding: 3rem;
+      text-align: right;
+      border: 1px solid white;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .lessons-general {
+    .popping-text {
+      img {
+        width: 10%;
+      }
+    }
+  }
+}

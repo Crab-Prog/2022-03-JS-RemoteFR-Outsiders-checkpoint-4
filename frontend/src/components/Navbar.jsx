@@ -22,21 +22,34 @@ function Navbar() {
           <NavLink to="/" className="hover-nav">
             <h1>Accueil</h1>
           </NavLink>
-          <li>
-            <a href="#projects" className="hover-nav">
-              Cours
-            </a>
-          </li>
+
+          <details>
+            <summary> Cours</summary>
+            <div className="drop-down-menu">
+              <NavLink to="/cours_popping" className="hover-nav">
+                <h1>Popping</h1>
+              </NavLink>
+              <NavLink to="/cours_locking" className="hover-nav">
+                <h1>Locking</h1>
+              </NavLink>
+              <NavLink to="/cours_street_lady" className="hover-nav">
+                <h1>Street Lady</h1>
+              </NavLink>
+            </div>
+          </details>
+
           <li>
             <a href="#projects" className="hover-nav">
               Planning/Tarifs
             </a>
           </li>
+
           <li>
             <a href="#projects" className="hover-nav">
               Contact
             </a>
           </li>
+
           <NavLink to="/inscription" className="hover-nav">
             <h1>Inscription</h1>
           </NavLink>
