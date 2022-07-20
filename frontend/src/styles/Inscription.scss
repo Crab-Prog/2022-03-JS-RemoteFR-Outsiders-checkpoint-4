@@ -7,6 +7,7 @@
   .box-container-inscription {
     margin: 0 auto;
     width: 60%;
+    max-width: 800px;
     height: auto;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.2);
@@ -15,5 +16,25 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+
+    .form-inscription {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #inscription {
+    .box-container-inscription {
+      .form-inscription {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }

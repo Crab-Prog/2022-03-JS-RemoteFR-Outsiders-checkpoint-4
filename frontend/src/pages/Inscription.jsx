@@ -1,22 +1,26 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api, notifySuccess, notifyError } from "@services/service";
 import "@styles/Inscription.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 function Inscription() {
   const [registration, setRegistration] = useState({});
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e, regist) => {
     e.preventDefault();
-    // api
-    //   .post("http://localhost:5500/registration")
-    //   .then(() => {
-    //       notifySuccess(
-    //         "Votre pré-inscription a été enregistrée. Un administrateur vous contactera bientôt pour vous informer de l'avancement de votre dossier"
-    //       )
-    //   })
-    //   .catch(() => {
-    //     notifyError(
-    //       "Votre pré-inscription n'a pas pu aboutir. Veuillez vérifier les champs à remplir avant de soumettre à nouveau votre pré-inscription"
-    //     );
-    //   });
+    api
+      .post("/registration", regist)
+      .then(() => {
+        notifySuccess("Vous venez de vous pré-inscrire");
+        navigate("/inscription");
+      })
+      .catch(() => {
+        notifyError(
+          "Votre pré-inscription n'a pas pu aboutir, merci de vérifier les champs."
+        );
+      });
   };
 
   function handleChange(e) {
@@ -29,15 +33,15 @@ function Inscription() {
   return (
     <section id="inscription">
       <div className="box-container-inscription">
-        <h1>Inscription</h1>
+        <h1 className="text-center">Inscription</h1>
         <form
           id="form-inscription"
           action="#"
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e, registration)}
           method="post"
         >
-          <div className="form-inscription w-full">
-            <div className="flex row justify-around">
+          <div className="form-inscription">
+            <div className="flex flex-col">
               <div>
                 <label htmlFor="registration_lastname" className="">
                   <p>Nom</p>
@@ -45,7 +49,7 @@ function Inscription() {
                 <input
                   type="text"
                   className="form-control"
-                  name="first_name"
+                  name="last_name"
                   id="registration_lastname"
                   onChange={handleChange}
                   required
@@ -59,15 +63,12 @@ function Inscription() {
                 <input
                   type="text"
                   className="form-control"
-                  name="last_name "
+                  name="first_name"
                   id="registration_name"
                   onChange={handleChange}
                   required
                 />
               </div>
-            </div>
-
-            <div className="flex row justify-around">
               <div className="">
                 <label htmlFor="registration_birthday" className="">
                   <p>Date de naissance</p>
@@ -76,14 +77,14 @@ function Inscription() {
                   type="date"
                   className="form-control"
                   name="birth_date"
-                  id=""
+                  id="registration_birthday"
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="">
                 <label htmlFor="registration_email" className="">
-                  <p>E-mail(facultatif)</p>
+                  <p>E-mail (facultatif)</p>
                 </label>
                 <input
                   type="text"
@@ -93,8 +94,7 @@ function Inscription() {
                   onChange={handleChange}
                 />
               </div>
-            </div>
-            <div className="flex row justify-around">
+
               <div className="">
                 <label htmlFor="registration_adress" className="">
                   <p>Adresse</p>
@@ -108,7 +108,8 @@ function Inscription() {
                   required
                 />
               </div>
-
+            </div>
+            <div className="flex flex-col">
               <div className="">
                 <label htmlFor="registration_code" className="">
                   <p>Code Postal</p>
@@ -122,8 +123,7 @@ function Inscription() {
                   required
                 />
               </div>
-            </div>
-            <div className="flex row justify-around">
+
               <div className="">
                 <label htmlFor="registration_city" className="">
                   <p>Ville</p>
@@ -140,7 +140,7 @@ function Inscription() {
 
               <div className="">
                 <label htmlFor="registration_phone" className="">
-                  <p>Téléphone</p>
+                  <p>Téléphone (facultatif)</p>
                 </label>
                 <input
                   type="text"
@@ -150,12 +150,10 @@ function Inscription() {
                   onChange={handleChange}
                 />
               </div>
-            </div>
 
-            <div className="flex row justify-around">
               <div className="">
                 <label htmlFor="registration_phone_father" className="">
-                  <p>Portable père</p>
+                  <p>Portable père (facultatif)</p>
                 </label>
                 <input
                   type="text"
@@ -167,7 +165,7 @@ function Inscription() {
               </div>
               <div className="">
                 <label htmlFor="registration_phone_mother" className="">
-                  <p>Portable mère</p>
+                  <p>Portable mère (facultatif)</p>
                 </label>
                 <input
                   type="text"
@@ -178,86 +176,90 @@ function Inscription() {
                 />
               </div>
             </div>
-
+          </div>
+          <div className="radio-group">
             <div className="">
-              <label htmlFor="hasDanced" className="formbuilder-radio">
-                Avez-vous deja pratique la danse ?
-              </label>
-
-              <div className="radio-group">
-                <div className="">
-                  <input
-                    name="hasDanced"
-                    id="radio-group-0"
-                    value="1"
-                    type="radio"
-                  />
-                  <label htmlFor="radio-group-0">oui</label>
-                </div>
-
-                <div className="">
-                  <input
-                    name="hasDanced"
-                    id="radio-group-1"
-                    value="0"
-                    type="radio"
-                    checked="checked"
-                  />
-                  <label htmlFor="radio-group-1">non</label>
-                </div>
-              </div>
+              <fieldset className="registration-fieldset">
+                <legend>Avez-vous deja pratique la danse ?</legend>
+                <label htmlFor="hasDanced" className="">
+                  <div>
+                    <input
+                      name="hasDanced"
+                      id="radio-group"
+                      value="1"
+                      type="radio"
+                      onClick={handleChange}
+                    />
+                    oui
+                  </div>
+                  <div>
+                    <input
+                      name="hasDanced"
+                      id="radio-group"
+                      value="0"
+                      type="radio"
+                      onClick={handleChange}
+                    />
+                    non
+                  </div>
+                </label>
+              </fieldset>
             </div>
+          </div>
 
-            <div className="">
-              <label htmlFor="means_of_knowledge" className="">
-                <p>Comment nous avez-vous connus ?</p>
-              </label>
-              <select
-                className="form-control"
-                name="means_of_knowledge"
-                id="means_of_knowledge"
-              >
-                <option value="POSTER_FLYER" selected="selected" id="0">
-                  Affiches, Flyers
-                </option>
-                <option value="INTERNET" id="1">
-                  Internet
-                </option>
-                <option value="WORD_OF_MOUTH" id="2">
-                  Bouche a oreille
-                </option>
-                <option value="ADVERTISING_PANEL" id="3">
-                  panneau publicitaire
-                </option>
-              </select>
-            </div>
-            <div className="">
-              <p id="">
+          <div className="">
+            <label htmlFor="means_of_knowledge" className="">
+              <p>Comment nous avez-vous connus ?</p>
+            </label>
+            <select
+              className="form-control"
+              name="means_of_knowledge"
+              id="means_of_knowledge"
+              onChange={handleChange}
+            >
+              <option value="" select="defaultValue">
+                --Choisir--
+              </option>
+              <option value="POSTER_FLYER" name="means_of_knowledge">
+                Affiches, Flyers
+              </option>
+              <option value="INTERNET" name="means_of_knowledge">
+                Internet
+              </option>
+              <option value="WORD_OF_MOUTH" name="means_of_knowledge">
+                Bouche a oreille
+              </option>
+              <option value="ADVERTISING_PANEL" name="means_of_knowledge">
+                panneau publicitaire
+              </option>
+            </select>
+          </div>
+          <div className="">
+            <div id="">
+              <ul>
                 <p>Documents à fournir :</p>
-                <ul>
-                  <li>1 certificat médical</li>
-                  <li>2 photos d'identité</li>
-                  <li>1 attestation d'assurance</li>
-                  <li>
-                    1 enveloppe timbrée (au nom et adresse de l'adhérent ou des
-                    parents pour les mineurs)
-                  </li>
-                  <li>
-                    Le règlement du forfait (possibilité de payer en trois fois
-                    sans frais)
-                  </li>
-                </ul>
-                <p>
-                  Le règlement intérieur doit être signé et retourné lors de
-                  l'inscription.
-                </p>
+                <li>1 certificat médical</li>
+                <li>2 photos d'identité</li>
+                <li>1 attestation d'assurance</li>
+                <li>
+                  1 enveloppe timbrée (au nom et adresse de l'adhérent ou des
+                  parents pour les mineurs)
+                </li>
+                <li>
+                  Le règlement du forfait (possibilité de payer en trois fois
+                  sans frais)
+                </li>
+              </ul>
+              <p>
+                Le règlement intérieur doit être signé et retourné lors de
+                l'inscription.
               </p>
             </div>
-            <div className="">
-              <button type="submit" className="bg-white" name="" id="">
-                Envoyer
-              </button>
-            </div>
+          </div>
+          <div className="">
+            <button type="submit" className="bg-white" name="" id="">
+              Envoyer
+            </button>
           </div>
         </form>
       </div>

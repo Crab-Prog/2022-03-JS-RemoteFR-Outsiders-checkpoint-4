@@ -4,6 +4,8 @@ import "./index.css";
 import "./styles/App.scss";
 import Inscription from "@pages/Inscription";
 import Navbar from "@components/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/inscription" element={<Inscription />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

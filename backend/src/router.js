@@ -1,6 +1,10 @@
 const express = require("express");
 
-const { ItemController, MemberController } = require("./controllers");
+const {
+  ItemController,
+  MemberController,
+  RegistrationController,
+} = require("./controllers");
 
 const router = express.Router();
 
@@ -11,5 +15,7 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.get("/members", MemberController.browse);
+
+router.post("/registration", RegistrationController.add);
 
 module.exports = router;
