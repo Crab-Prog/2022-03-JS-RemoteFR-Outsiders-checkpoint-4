@@ -10,11 +10,13 @@ import Popping from "@components/Popping";
 import Locking from "@components/Locking";
 import NewSchool from "@components/NewSchool";
 import Dancehall from "@components/Dancehall";
+import Schedule from "@pages/Schedule";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <hr />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/inscription" element={<Inscription />} />
@@ -22,6 +24,7 @@ function App() {
         <Route path="/cours_locking" element={<Locking />} />
         <Route path="/cours_new-school" element={<NewSchool />} />
         <Route path="/cours_dancehall" element={<Dancehall />} />
+        <Route path="/planning_tarifs" element={<Schedule />} />
       </Routes>
       <ToastContainer />
     </div>

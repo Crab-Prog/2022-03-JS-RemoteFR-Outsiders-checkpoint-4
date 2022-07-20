@@ -45,11 +45,9 @@ function Navbar() {
             </div>
           </details>
 
-          <li>
-            <a href="#projects" className="hover-nav">
-              Planning/Tarifs
-            </a>
-          </li>
+          <NavLink to="/planning_tarifs" className="hover-nav">
+            <h1>Planning/Tarifs</h1>
+          </NavLink>
 
           <li>
             <a href="#projects" className="hover-nav">
@@ -62,6 +60,7 @@ function Navbar() {
           </NavLink>
         </ul>
       </nav>
+      <hr />
     </div>
   );
 }
