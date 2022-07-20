@@ -1,4 +1,19 @@
 .home-header {
   background-color: black;
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 70px), 0% 100%);
+  transition: 1s;
+}
+.home-header-alternative {
+  background-color: black;
+  clip-path: none;
+  animation: fadeIn 0.9s ease-in both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
 }

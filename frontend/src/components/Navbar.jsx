@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import logo from "@assets/images/logo_RVB_2.png";
 import "@styles/Navbar.scss";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+import ExportContext from "@contexts/context";
 
+function Navbar() {
+  const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
   return (
     <div className="menu-wrapper">
       <img src={logo} alt="" />
-      <nav className={`navigation ${isOpen ? "open" : "not-open"}`}>
+      <nav className={`navigation ${isOpen ? "open" : ""}`}>
         <button
           aria-label="burger button"
           type="button"
