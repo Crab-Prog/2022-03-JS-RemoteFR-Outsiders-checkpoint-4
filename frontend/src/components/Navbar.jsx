@@ -9,9 +9,6 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
 
-  //   const handleRefresh = (e) => {
-  // e.target.preventDefault();
-  //   }
   return (
     <div className="menu-wrapper">
       <img src={logo} alt="" />
@@ -45,11 +42,9 @@ function Navbar() {
             </div>
           </details>
 
-          <li>
-            <a href="#projects" className="hover-nav">
-              Planning/Tarifs
-            </a>
-          </li>
+          <NavLink to="/planning_tarifs" className="hover-nav">
+            <h1>Planning/Tarifs</h1>
+          </NavLink>
 
           <li>
             <a href="#projects" className="hover-nav">

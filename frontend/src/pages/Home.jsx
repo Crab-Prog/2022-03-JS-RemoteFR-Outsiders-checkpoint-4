@@ -25,6 +25,7 @@ export default function Home() {
 
   return (
     <header className={`${isOpen ? "home-header-alternative" : "home-header"}`}>
+      {/* <div className="light-line"></div> */}
       <Header />
       {/* {members.map((member) => {
         return(<p>{member.first_name}</p>)
