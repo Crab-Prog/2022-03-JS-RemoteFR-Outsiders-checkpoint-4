@@ -22,7 +22,7 @@ hr {
     position: absolute;
     width: 8rem;
     height: 4rem;
-    background: #fff;
+    background: var(--white);
     border-radius: 50%;
     position: absolute;
     animation: run 15s linear infinite;

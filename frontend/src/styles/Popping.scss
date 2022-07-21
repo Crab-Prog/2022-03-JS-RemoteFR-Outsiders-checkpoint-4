@@ -16,23 +16,23 @@
     justify-content: flex-end;
     width: 80%;
     max-width: 800px;
-    border: 1px solid white;
+    border: 1px solid var(--white);
 
     img {
       width: 40%;
-      filter: drop-shadow(0 0 0.75rem white);
+      filter: drop-shadow(0 0 0.75rem var(--white));
       opacity: 0.3;
-      border: 1px solid white;
+      border: 1px solid var(--white);
       object-fit: cover;
     }
 
     p {
       position: relative;
-      color: white;
+      color: var(--white);
       width: 90%;
       padding: 3rem;
       text-align: right;
-      border: 1px solid white;
+      border: 1px solid var(--white);
       background-color: #000000cc;
     }
   }

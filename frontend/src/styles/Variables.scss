@@ -3,7 +3,7 @@
 
 $primary: #03e1e5;
 $black: #000000;
-$warn: #dfa612;
+$white: #efebeb;
 $fontFamilyP: "Lato", sans-serif;
 $fontFamilyT: "Oswald", sans-serif;
 $fontSizeT: clamp(2rem, 6vw, 10rem);
@@ -11,6 +11,7 @@ $fontSizeT: clamp(2rem, 6vw, 10rem);
 :root {
   --primary: #{$primary};
   --black: #{$black};
+  --white: #{$white};
   --font-family-p: #{$fontFamilyP};
   --font-family-t: #{$fontFamilyT};
   --font-size-title: #{$fontSizeT};

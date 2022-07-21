@@ -14,7 +14,7 @@
     backdrop-filter: blur(1.1000000000000014px);
     -webkit-backdrop-filter: blur(2.1px);
     border: 1px solid rgba(255, 255, 255, 0.04);
-    color: white;
+    color: var(--white);
     padding: 2rem;
 
     img {
@@ -34,7 +34,7 @@
     .i-2,
     .i-3 {
       box-shadow: 5px 5px 10px black;
-      border: 0.5rem solid white;
+      border: 0.5rem solid var(--white);
     }
     .i-1 {
       grid-column: 1/3;

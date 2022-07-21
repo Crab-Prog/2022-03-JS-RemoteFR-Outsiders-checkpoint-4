@@ -55,11 +55,9 @@ function Navbar() {
             <h1>Intervenants</h1>
           </NavLink>
 
-          <li>
-            <a href="#projects" className="hover-nav">
-              Contact
-            </a>
-          </li>
+          <NavLink to="/contact" className="hover-nav">
+            <h1>Contact</h1>
+          </NavLink>
 
           <NavLink to="/inscription" className="hover-nav">
             <h1>Inscription</h1>
