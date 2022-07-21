@@ -3,6 +3,7 @@ import Header from "@components/Header";
 import "@styles/Home.scss";
 
 import ExportContext from "@contexts/context";
+import HomeInfos from "@components/HomeInfos";
 // import axios from "axios";
 // import { useState, useEffect } from "react";
 
@@ -24,12 +25,17 @@ export default function Home() {
   // }, []);
 
   return (
-    <header className={`${isOpen ? "home-header-alternative" : "home-header"}`}>
-      {/* <div className="light-line"></div> */}
-      <Header />
+    <>
+      <header
+        className={`${isOpen ? "home-header-alternative" : "home-header"}`}
+      >
+        {/* <div className="light-line"></div> */}
+        <Header />
+      </header>
       {/* {members.map((member) => {
         return(<p>{member.first_name}</p>)
       })} */}
-    </header>
+      <HomeInfos />
+    </>
   );
 }
