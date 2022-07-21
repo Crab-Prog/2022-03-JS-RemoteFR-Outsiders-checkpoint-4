@@ -5,13 +5,10 @@ import email from "@assets/svg/email.svg";
 import phone from "@assets/svg/phone.svg";
 
 import "@styles/Contact.scss";
+import { api, notifySuccess, notifyError } from "@services/service";
 
 function Contact() {
-  const [messageValue, setMessageValue] = useState({
-    nom: "",
-    email: "",
-    message: "",
-  });
+  const [messageValue, setMessageValue] = useState({});
 
   const handleChangeMessage = (event) => {
     setMessageValue({
@@ -20,23 +17,25 @@ function Contact() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    api
+      .post("/mail", messageValue)
+      .then(() => {
+        notifySuccess(
+          "Votre message a bien été envoyé. Un administrateur vous contactera bientôt."
+        );
+      })
+      .catch(() => {
+        notifyError("Votre message n'a pas pu être envoyé.");
+      });
+  };
+
   return (
     <section id="contact-form">
-      <form>
+      <form method="post">
         <div className="register_form">
           <h1>Nous vous invitons à remplir ce formulaire</h1>
-          <div className="input-form">
-            <label htmlFor="asso_name">
-              <p>Nom</p>
-              <input
-                type="text"
-                id="asso_name"
-                name="nom"
-                required
-                onChange={handleChangeMessage}
-              />
-            </label>
-          </div>
           <div>
             <label htmlFor="asso_email">
               <p>Email</p>
@@ -49,6 +48,19 @@ function Contact() {
               />
             </label>
           </div>
+          <div className="input-form">
+            <label htmlFor="asso_name">
+              <p>Sujet</p>
+              <input
+                type="text"
+                id="asso_name"
+                name="subject"
+                required
+                onChange={handleChangeMessage}
+              />
+            </label>
+          </div>
+
           <div className="form_textarea">
             <label htmlFor="message">
               <p>Votre message</p>
@@ -61,8 +73,8 @@ function Contact() {
               />
             </label>
           </div>
-          <button type="submit" className="button-blue">
-            hello here{" "}
+          <button onClick={handleSubmit} type="submit" className="button-blue">
+            hello here
           </button>
         </div>
       </form>

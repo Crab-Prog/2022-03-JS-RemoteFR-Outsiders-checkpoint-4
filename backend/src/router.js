@@ -6,6 +6,7 @@ const {
   RegistrationController,
   AuthController,
   UserController,
+  MailController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -26,5 +27,8 @@ router.get("/user", UserController.browse);
 
 router.post("/auth/register", AuthController.register);
 router.post("/auth/login", AuthController.login);
+
+// router.get("/mail", MailController.index);
+router.post("/mail", MailController.index);
 
 module.exports = router;
