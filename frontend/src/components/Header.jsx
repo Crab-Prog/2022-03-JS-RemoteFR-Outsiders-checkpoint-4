@@ -11,7 +11,7 @@ function Header() {
   };
   return (
     <section id="header-part">
-      <video src={smoke} autoPlay muted loop />
+      <video src={smoke} autoPlay muted loop className="w-full" />
       <div className="header-container-text">
         <h1>INS</h1>
         <p>L’école des danses actuelles</p>

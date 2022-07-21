@@ -15,10 +15,12 @@ import Schedule from "@pages/Schedule";
 import Teachers from "@pages/Teachers";
 import Login from "@pages/Login";
 
-import ExportContext from "@contexts/context";
 import PrivateRoute from "@services/PrivateRoute";
 import AdminPannel from "@pages/AdminPannel";
 import Contact from "@pages/Contact";
+
+import ExportContext from "@contexts/context";
+import Footer from "@components/Footer";
 
 function App() {
   const { infoUser } = useContext(ExportContext.GeneralContext);
@@ -37,9 +39,8 @@ function App() {
         <Route path="/planning_tarifs" element={<Schedule />} />
         <Route path="/intervenants" element={<Teachers />} />
         <Route path="/contact" element={<Contact />} />
-
         <Route path="/authentification" element={<Login />} />
-        <Route path="/admin_back_office2" element={<AdminPannel />} />
+        {/* <Route path="/admin_back_office2" element={<AdminPannel />} /> */}
         <Route
           path="/admin_back_office"
           element={
@@ -49,6 +50,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   );

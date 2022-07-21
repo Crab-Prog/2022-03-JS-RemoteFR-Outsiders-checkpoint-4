@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { api, notifySuccess, notifyError } from "@services/service";
+import ExportContext from "@contexts/context";
 
 function ButtonAddUser() {
   const [users, setUsers] = useState([]);
-
+  const { isUpdate, setIsUpdate } = useContext(ExportContext.GeneralContext);
   function handleChange(e) {
     setUsers({
       ...users,
@@ -17,6 +18,7 @@ function ButtonAddUser() {
       .post(`/auth/register`, users)
       .then((res) => {
         setUsers(res.data);
+        setIsUpdate(!isUpdate);
         notifySuccess("Vous venez d'ajouter un nouvel utilisateur");
       })
       .catch((err) => {

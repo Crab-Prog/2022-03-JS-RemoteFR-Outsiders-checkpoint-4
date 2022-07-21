@@ -8,7 +8,7 @@ import "@styles/Login.scss";
 import ExportContext from "@contexts/context";
 
 function Login() {
-  const [isLog, setIsLog] = useState(false);
+  const [setIsLog] = useState(false);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -19,17 +19,18 @@ function Login() {
 
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    if (isLog) {
-      navigate("/admin_back_office");
-    } else {
-      navigate("/");
-    }
-  }, [isLog]);
+  // React.useEffect(() => {
+  //   if (isLog) {
+  //     navigate("/admin_back_office");
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, [isLog]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     authentification(user, setIsLog, setInfoUser);
+    navigate("/admin_back_office");
   };
 
   const handleChange = (e) => {
