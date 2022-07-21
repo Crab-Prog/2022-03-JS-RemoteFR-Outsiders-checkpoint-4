@@ -21,7 +21,7 @@ function Navbar() {
   return (
     <div className="menu-wrapper">
       <button type="button" onClick={handleNavigateHome}>
-        <img src={logo} alt="" />
+        <img src={logo} alt="" className="logo-img" />
       </button>
       <nav className={`navigation ${isOpen ? "open" : ""}`}>
         <button
@@ -36,7 +36,14 @@ function Navbar() {
           </NavLink>
 
           <details>
-            <summary> Cours</summary>
+            <summary>
+              <p>Cours</p>
+              <img
+                src="https://www.svgrepo.com/show/167358/cross.svg"
+                alt=""
+                className="faq-cross"
+              />
+            </summary>
             <div className="drop-down-menu">
               <NavLink to="/cours_popping" className="hover-nav">
                 <h1>Popping</h1>

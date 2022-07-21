@@ -258,11 +258,12 @@ function Inscription() {
                 </p>
               </div>
             </div>
-            <div className="">
-              <button type="submit" className="bg-white" name="" id="">
-                Envoyer
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="text-white font-bold py-2 px-4 border rounded"
+            >
+              Envoyer
+            </button>
           </div>
         </form>
       </div>
