@@ -46,6 +46,10 @@ function Navbar() {
             <h1>Planning/Tarifs</h1>
           </NavLink>
 
+          <NavLink to="/intervenants" className="hover-nav">
+            <h1>Intervenants</h1>
+          </NavLink>
+
           <li>
             <a href="#projects" className="hover-nav">
               Contact
