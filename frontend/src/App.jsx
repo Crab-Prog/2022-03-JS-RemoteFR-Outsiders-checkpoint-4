@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "@pages/Home";
 import "./index.css";
@@ -12,8 +13,15 @@ import NewSchool from "@components/NewSchool";
 import Dancehall from "@components/Dancehall";
 import Schedule from "@pages/Schedule";
 import Teachers from "@pages/Teachers";
+import Login from "@pages/Login";
+
+import ExportContext from "@contexts/context";
+import PrivateRoute from "@services/PrivateRoute";
+import AdminPannel from "@pages/AdminPannel";
 
 function App() {
+  const { infoUser } = useContext(ExportContext.GeneralContext);
+
   return (
     <div className="App">
       <Navbar />
@@ -27,6 +35,17 @@ function App() {
         <Route path="/cours_dancehall" element={<Dancehall />} />
         <Route path="/planning_tarifs" element={<Schedule />} />
         <Route path="/intervenants" element={<Teachers />} />
+
+        <Route path="/authentification" element={<Login />} />
+        <Route path="/admin_back_office2" element={<AdminPannel />} />
+        <Route
+          path="/admin_back_office"
+          element={
+            <PrivateRoute isAllowed={infoUser.isAdmin === 1}>
+              <AdminPannel />
+            </PrivateRoute>
+          }
+        />
       </Routes>
       <ToastContainer />
     </div>

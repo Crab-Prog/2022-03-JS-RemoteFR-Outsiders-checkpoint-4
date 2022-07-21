@@ -1,14 +1,19 @@
 import React, { useContext } from "react";
-import logo from "@assets/images/logo_RVB_2.png";
-import "@styles/Navbar.scss";
-
+import { NavLink, useNavigate } from "react-router-dom";
 import ExportContext from "@contexts/context";
 
-import { NavLink } from "react-router-dom";
+import logo from "@assets/images/logo_RVB_2.png";
+
+import "@styles/Navbar.scss";
 
 function Navbar() {
   const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/authentification");
+  };
   return (
     <div className="menu-wrapper">
       <img src={logo} alt="" />
@@ -61,6 +66,9 @@ function Navbar() {
           </NavLink>
         </ul>
       </nav>
+      <button type="button" onClick={handleNavigate}>
+        <img src="https://www.svgrepo.com/show/219333/login.svg" alt="" />
+      </button>
     </div>
   );
 }
