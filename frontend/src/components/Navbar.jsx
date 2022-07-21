@@ -14,9 +14,15 @@ function Navbar() {
   const handleNavigate = () => {
     navigate("/authentification");
   };
+  const handleNavigateHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="menu-wrapper">
-      <img src={logo} alt="" />
+      <button type="button" onClick={handleNavigateHome}>
+        <img src={logo} alt="" />
+      </button>
       <nav className={`navigation ${isOpen ? "open" : ""}`}>
         <button
           aria-label="burger button"
@@ -64,7 +70,7 @@ function Navbar() {
           </NavLink>
         </ul>
       </nav>
-      <button type="button" onClick={handleNavigate}>
+      <button type="button" className="login-btn" onClick={handleNavigate}>
         <img src="https://www.svgrepo.com/show/219333/login.svg" alt="" />
       </button>
     </div>

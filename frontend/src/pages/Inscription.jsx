@@ -32,8 +32,8 @@ function Inscription() {
 
   return (
     <section id="inscription">
+      <h1 className="text-center text-8xl text-white pb-8">Inscription</h1>
       <div className="box-container-inscription">
-        <h1 className="text-center">Inscription</h1>
         <form
           id="form-inscription"
           action="#"
@@ -177,89 +177,92 @@ function Inscription() {
               </div>
             </div>
           </div>
-          <div className="radio-group">
-            <div className="">
-              <fieldset className="registration-fieldset">
-                <legend>Avez-vous deja pratique la danse ?</legend>
-                <label htmlFor="hasDanced" className="">
-                  <div>
-                    <input
-                      name="hasDanced"
-                      id="radio-group"
-                      value="1"
-                      type="radio"
-                      onClick={handleChange}
-                    />
-                    oui
-                  </div>
-                  <div>
-                    <input
-                      name="hasDanced"
-                      id="radio-group"
-                      value="0"
-                      type="radio"
-                      onClick={handleChange}
-                    />
-                    non
-                  </div>
-                </label>
-              </fieldset>
-            </div>
-          </div>
 
-          <div className="">
-            <label htmlFor="means_of_knowledge" className="">
-              <p>Comment nous avez-vous connus ?</p>
-            </label>
-            <select
-              className="form-control"
-              name="means_of_knowledge"
-              id="means_of_knowledge"
-              onChange={handleChange}
-            >
-              <option value="" select="defaultValue">
-                --Choisir--
-              </option>
-              <option value="POSTER_FLYER" name="means_of_knowledge">
-                Affiches, Flyers
-              </option>
-              <option value="INTERNET" name="means_of_knowledge">
-                Internet
-              </option>
-              <option value="WORD_OF_MOUTH" name="means_of_knowledge">
-                Bouche a oreille
-              </option>
-              <option value="ADVERTISING_PANEL" name="means_of_knowledge">
-                panneau publicitaire
-              </option>
-            </select>
-          </div>
-          <div className="">
-            <div id="">
-              <ul>
-                <p>Documents à fournir :</p>
-                <li>1 certificat médical</li>
-                <li>2 photos d'identité</li>
-                <li>1 attestation d'assurance</li>
-                <li>
-                  1 enveloppe timbrée (au nom et adresse de l'adhérent ou des
-                  parents pour les mineurs)
-                </li>
-                <li>
-                  Le règlement du forfait (possibilité de payer en trois fois
-                  sans frais)
-                </li>
-              </ul>
-              <p>
-                Le règlement intérieur doit être signé et retourné lors de
-                l'inscription.
-              </p>
+          <div className="inscription-second">
+            <div className="radio-group">
+              <div className="">
+                <fieldset className="registration-fieldset">
+                  <legend>Avez-vous deja pratique la danse ?</legend>
+                  <label htmlFor="hasDanced" className="">
+                    <div>
+                      <input
+                        name="hasDanced"
+                        id="radio-group"
+                        value="1"
+                        type="radio"
+                        onClick={handleChange}
+                      />
+                      oui
+                    </div>
+                    <div>
+                      <input
+                        name="hasDanced"
+                        id="radio-group"
+                        value="0"
+                        type="radio"
+                        onClick={handleChange}
+                      />
+                      non
+                    </div>
+                  </label>
+                </fieldset>
+              </div>
             </div>
-          </div>
-          <div className="">
-            <button type="submit" className="bg-white" name="" id="">
-              Envoyer
-            </button>
+
+            <div className="">
+              <label htmlFor="means_of_knowledge" className="">
+                <p>Comment nous avez-vous connus ?</p>
+              </label>
+              <select
+                className="form-control"
+                name="means_of_knowledge"
+                id="means_of_knowledge"
+                onChange={handleChange}
+              >
+                <option value="" select="defaultValue">
+                  --Choisir--
+                </option>
+                <option value="POSTER_FLYER" name="means_of_knowledge">
+                  Affiches, Flyers
+                </option>
+                <option value="INTERNET" name="means_of_knowledge">
+                  Internet
+                </option>
+                <option value="WORD_OF_MOUTH" name="means_of_knowledge">
+                  Bouche a oreille
+                </option>
+                <option value="ADVERTISING_PANEL" name="means_of_knowledge">
+                  panneau publicitaire
+                </option>
+              </select>
+            </div>
+            <div className="">
+              <div id="">
+                <ul>
+                  <h2>Documents à fournir :</h2>
+                  <li>1 certificat médical</li>
+                  <li>2 photos d'identité</li>
+                  <li>1 attestation d'assurance</li>
+                  <li>
+                    1 enveloppe timbrée (au nom et adresse de l'adhérent ou des
+                    parents pour les mineurs)
+                  </li>
+                  <li>
+                    Le règlement du forfait (possibilité de payer en trois fois
+                    sans frais)
+                  </li>
+                </ul>
+                <p>
+                  Le règlement intérieur doit être signé et retourné lors de
+                  l'inscription.
+                </p>
+              </div>
+            </div>
+            <div className="">
+              <button type="submit" className="bg-white" name="" id="">
+                Envoyer
+              </button>
+            </div>
           </div>
         </form>
       </div>

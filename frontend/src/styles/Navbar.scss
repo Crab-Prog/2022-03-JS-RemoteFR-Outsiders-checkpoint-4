@@ -7,10 +7,14 @@
   height: 60px;
   padding: 0 2rem;
   margin-bottom: 2rem;
-  background-color: black;
+  background-color: var(--black);
 
+  .login-btn {
+    position: absolute;
+    right: 0;
+  }
   img {
-    height: 4rem;
+    height: 3rem;
     width: auto;
     filter: invert(1);
     max-width: 100px;
@@ -66,7 +70,7 @@
     position: absolute;
     width: 30px;
     height: 2px;
-    background: #e1e1e1;
+    background: var(--white);
     transform: translateY(-8px);
     transition: 0.5s;
   }
@@ -80,7 +84,7 @@
     position: absolute;
     width: 30px;
     height: 2px;
-    background: #e1e1e1;
+    background: var(--white);
     transform: translateY(8px);
     transition: 0.5s;
     box-shadow: 0 -8px 0 rgba(202, 21, 21, 0.575);
