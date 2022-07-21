@@ -9,6 +9,8 @@ function GeneralProvider({ children }) {
     isAdmin: sessionStorage.getItem(`isAdmin`),
   });
 
+  const [isUpdate, setIsUpdate] = useState(false);
+
   return (
     <GeneralContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
@@ -17,6 +19,8 @@ function GeneralProvider({ children }) {
         setIsOpen,
         infoUser,
         setInfoUser,
+        isUpdate,
+        setIsUpdate,
       }}
     >
       {children}
