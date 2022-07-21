@@ -37,23 +37,23 @@ function Contact() {
         <div className="register_form">
           <h1>Nous vous invitons à remplir ce formulaire</h1>
           <div>
-            <label htmlFor="asso_email">
+            <label htmlFor="contact-email">
               <p>Email</p>
               <input
                 type="email"
                 name="email"
                 required
-                id="asso_email"
+                id="contact-email"
                 onChange={handleChangeMessage}
               />
             </label>
           </div>
           <div className="input-form">
-            <label htmlFor="asso_name">
+            <label htmlFor="contact-subject">
               <p>Sujet</p>
               <input
                 type="text"
-                id="asso_name"
+                id="contact-subject"
                 name="subject"
                 required
                 onChange={handleChangeMessage}
@@ -73,8 +73,8 @@ function Contact() {
               />
             </label>
           </div>
-          <button onClick={handleSubmit} type="submit" className="button-blue">
-            hello here
+          <button onClick={handleSubmit} type="submit" className="p-2">
+            Envoyer
           </button>
         </div>
       </form>
