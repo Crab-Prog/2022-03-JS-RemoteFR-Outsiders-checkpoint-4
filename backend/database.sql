@@ -1,15 +1,16 @@
--- Base de données : `insschoobase`
 --
+-- Database: `ins_school`
+--
+
 -- --------------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `ins_school` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `ins_school`;
 
 --
--- Structure de la table `member`
+-- Table structure for table `member`
 --
 
-CREATE TABLE `member` (
-  `member_id` smallint(5) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `member`;
+CREATE TABLE IF NOT EXISTS `member` (
+  `member_id` smallint UNSIGNED NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `birth_date` date NOT NULL,
@@ -21,11 +22,13 @@ CREATE TABLE `member` (
   `cellphone_mother` char(14) DEFAULT NULL,
   `phone` char(14) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `means_of_knowledge` enum('POSTER_FLYER','INTERNET','WORD_OF_MOUTH','ADVERTISING_PANEL') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `means_of_knowledge` enum('POSTER_FLYER','INTERNET','WORD_OF_MOUTH','ADVERTISING_PANEL') NOT NULL,
+  PRIMARY KEY (`member_id`),
+  UNIQUE KEY `last_name` (`last_name`,`first_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `member`
+-- Dumping data for table `member`
 --
 
 INSERT INTO `member` (`member_id`, `first_name`, `last_name`, `birth_date`, `address`, `postal_code`, `city`, `cellphone`, `cellphone_father`, `cellphone_mother`, `phone`, `email`, `means_of_knowledge`) VALUES
@@ -47,11 +50,12 @@ INSERT INTO `member` (`member_id`, `first_name`, `last_name`, `birth_date`, `add
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pre_registration`
+-- Table structure for table `pre_registration`
 --
 
-CREATE TABLE `pre_registration` (
-  `pre_registration_id` smallint(5) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `pre_registration`;
+CREATE TABLE IF NOT EXISTS `pre_registration` (
+  `pre_registration_id` smallint UNSIGNED NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `birth_date` date NOT NULL,
@@ -64,18 +68,20 @@ CREATE TABLE `pre_registration` (
   `phone` char(14) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `plan` enum('QUARTERLY','ANNUAL') DEFAULT NULL,
-  `means_of_knowledge` enum('POSTER_FLYER','INTERNET','WORD_OF_MOUTH','ADVERTISING_PANEL') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `means_of_knowledge` enum('POSTER_FLYER','INTERNET','WORD_OF_MOUTH','ADVERTISING_PANEL') NOT NULL,
+  PRIMARY KEY (`pre_registration_id`),
+  KEY `last_name` (`last_name`,`first_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `pre_registration`
+-- Dumping data for table `pre_registration`
 --
 
 INSERT INTO `pre_registration` (`pre_registration_id`, `first_name`, `last_name`, `birth_date`, `address`, `postal_code`, `city`, `cellphone`, `cellphone_father`, `cellphone_mother`, `phone`, `email`, `plan`, `means_of_knowledge`) VALUES
 (709, 'David', 'Lancelot', '1992-05-19', '1 rue sous les Cézeaux', '63000', 'Clermont-Ferrand', '', '', '', '', 'david@gmail.com', 'QUARTERLY', 'WORD_OF_MOUTH'),
 (710, 'Benjamine', 'BENET', '2003-12-17', 'Résidence des augustins', '63170', 'Aubière', '07 00 12 86 90', '', '', '', 'benjnet23@gmail.com', NULL, 'INTERNET'),
 (711, 'louis', 'gillet', '2014-08-01', '7 rue des Fontaines', '63119', 'chateaugay', '', '06 37 48 00 07', '06 33 30 40 97', '', 'bg.bg@gmail.com', 'QUARTERLY', 'INTERNET'),
-(712, 'Laura', 'Hillairet', '2000-03-03', '41 Rue Gustave Flaubert', '63870', 'ORCINES', '06 00 08 82 75', '', '', '', 'laulae07@gmail.com',NULL, 'INTERNET'),
+(712, 'Laura', 'Hillairet', '2000-03-03', '41 Rue Gustave Flaubert', '63870', 'ORCINES', '06 00 08 82 75', '', '', '', 'laulae07@gmail.com', NULL, 'INTERNET'),
 (715, 'Claire', 'Dinis', '1972-02-27', '88 place des 3 Fontaines', '63360', 'Gerzat', '06 63 72 00 11', '', '', '', 'clinis@gmail.com', NULL, 'INTERNET'),
 (716, 'Fabrice', 'Stievenard', '1970-05-02', '1 Rue du 19 mars 1962Du Point Du Jour', '63300', 'Thiers', '', '', '', '', '', NULL, 'WORD_OF_MOUTH'),
 (717, 'Elie', 'Dudek', '1999-11-06', '13 boulevard Gustave Flaubert', '63000', 'Clermont-Ferrand', '07 00 05 86 57', '', '', '', 'eliek@gmail.com', 'QUARTERLY', 'INTERNET'),
@@ -85,20 +91,23 @@ INSERT INTO `pre_registration` (`pre_registration_id`, `first_name`, `last_name`
 (723, 'DELPHINE', 'CHAIZE', '1989-05-06', '16 boulevard du Général Crochet', '63400', 'Chamalières', '06 75 47 87 00', '', '', '', 'chaine@gmail.com', NULL, 'INTERNET'),
 (724, 'Charlotte', 'Faury', '1995-07-27', '25 avenue du Point Du Jour', '63400', 'Chamalieres', '06 70 00 14 82', '', '', '', 'charloy@gmail.com', 'QUARTERLY', 'INTERNET');
 
+-- --------------------------------------------------------
+
 --
--- Structure de la table `room`
+-- Table structure for table `room`
 --
 
-CREATE TABLE `room` (
-  `room_id` tinyint(3) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `room`;
+CREATE TABLE IF NOT EXISTS `room` (
+  `room_id` tinyint UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
   `postal_code` char(5) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `room`
+-- Dumping data for table `room`
 --
 
 INSERT INTO `room` (`room_id`, `name`, `address`, `postal_code`, `city`) VALUES
@@ -109,11 +118,12 @@ INSERT INTO `room` (`room_id`, `name`, `address`, `postal_code`, `city`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `teacher`
+-- Table structure for table `teacher`
 --
 
-CREATE TABLE `teacher` (
-  `teacher_id` tinyint(3) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `teacher`;
+CREATE TABLE IF NOT EXISTS `teacher` (
+  `teacher_id` tinyint UNSIGNED NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `birth_date` date DEFAULT NULL,
@@ -123,11 +133,11 @@ CREATE TABLE `teacher` (
   `cellphone` char(14) DEFAULT NULL,
   `phone` char(14) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `absences` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `absences` tinyint UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `teacher`
+-- Dumping data for table `teacher`
 --
 
 INSERT INTO `teacher` (`teacher_id`, `first_name`, `last_name`, `birth_date`, `address`, `postal_code`, `city`, `cellphone`, `phone`, `email`, `absences`) VALUES
@@ -137,91 +147,26 @@ INSERT INTO `teacher` (`teacher_id`, `first_name`, `last_name`, `birth_date`, `a
 (5, 'Eve', 'H', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
 (7, 'Sophie & Hervé', 'Babin', NULL, '', '', '', '', '', '', 0),
 (13, 'Sophie', 'Babin', NULL, '', '', '', '', '', '', 0);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(24) NOT NULL,
   `password` char(128) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `admin`) VALUES
 ('admin', '664bba89fb1722f90ed283de952f1b236baaebb13fc6ae1a1540aadca136', 1),
 ('djam', 'fc6f90d57c2115c7d463efed48b7e7a78b23757757816173cd810287836d373f1413', 0),
 ('Ophelie', '0f096ead228121d9853f6d089bff16a75050e917d3ed2f4d3ec7f87cadabd', 0);
-
---
--- Index pour les tables déchargées
-
--- Index pour la table `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`member_id`),
-  ADD UNIQUE KEY `last_name` (`last_name`,`first_name`);
-
---
--- Index pour la table `pre_registration`
---
-ALTER TABLE `pre_registration`
-  ADD PRIMARY KEY (`pre_registration_id`),
-  ADD KEY `last_name` (`last_name`,`first_name`);
-
---
--- Index pour la table `registration`
---
-ALTER TABLE `registration`
-  ADD PRIMARY KEY (`registration_id`),
-  ADD UNIQUE KEY `member_id` (`member_id`,`season`);
-
-
---
--- Index pour la table `room`
---
-ALTER TABLE `room`
-  ADD PRIMARY KEY (`room_id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Index pour la table `teacher`
---
-ALTER TABLE `teacher`
-  ADD PRIMARY KEY (`teacher_id`),
-  ADD UNIQUE KEY `last_name` (`last_name`,`first_name`);
-
---
--- Index pour la table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `member`
---
-ALTER TABLE `member`
-  MODIFY `member_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
-
---
---
--- AUTO_INCREMENT pour la table `pre_registration`
---
-ALTER TABLE `pre_registration`
-  MODIFY `pre_registration_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=744;
-
---
--- AUTO_INCREMENT pour la table `teacher`
---
-ALTER TABLE `teacher`
-  MODIFY `teacher_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;

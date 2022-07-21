@@ -12,6 +12,7 @@ import NewSchool from "@components/NewSchool";
 import Dancehall from "@components/Dancehall";
 import Schedule from "@pages/Schedule";
 import Teachers from "@pages/Teachers";
+import Login from "@pages/Login";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/cours_dancehall" element={<Dancehall />} />
         <Route path="/planning_tarifs" element={<Schedule />} />
         <Route path="/intervenants" element={<Teachers />} />
+        <Route path="/authentification" element={<Login />} />
       </Routes>
       <ToastContainer />
     </div>
