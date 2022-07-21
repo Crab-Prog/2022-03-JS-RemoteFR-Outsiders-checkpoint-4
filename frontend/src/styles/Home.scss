@@ -10,22 +10,25 @@
   background-color: black;
   clip-path: none;
   animation: fadeIn 0.9s ease-in both;
+  position: relative;
 }
 hr {
   height: 0.2rem !important;
   background: linear-gradient(to right, #f00, blue, #0f0);
   position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 4rem;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    animation: run 15s linear infinite;
+  }
 }
-hr::before {
-  content: "";
-  position: absolute;
-  width: 8rem;
-  height: 4rem;
-  background: #fff;
-  border-radius: 50%;
-  position: absolute;
-  animation: run 15s linear infinite;
-}
+
 @keyframes fadeIn {
   0% {
     opacity: 0.9;

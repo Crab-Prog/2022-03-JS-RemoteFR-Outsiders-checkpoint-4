@@ -13,7 +13,7 @@ export default function Home() {
   // const [members, setMembers] = useState();
 
   // useEffect(() => {
-  //   axios.get("http://localhost:5500/members")
+  //   api.get("/members")
   //   .then((res) => {
   //     setMembers(res.data);
   //     console.log(res.data)

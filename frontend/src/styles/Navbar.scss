@@ -43,7 +43,7 @@
     align-items: center;
     margin: 0 auto;
     width: 100%;
-    height: 50vh;
+    height: 100vh;
     letter-spacing: 0.1rem;
   }
   .menu-wrapper nav {
@@ -104,15 +104,15 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%;
-    color: black;
+    height: 100%;
+    color: white;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1.5rem;
-    background-color: rgba(216, 46, 46, 0.945);
+    background-color: rgba(15, 14, 14, 0.945);
     transition: 1s;
     animation: slideIn 0.8s ease-in;
   }
