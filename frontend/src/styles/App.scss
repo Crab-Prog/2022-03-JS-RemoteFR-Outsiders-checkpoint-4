@@ -1,4 +1,5 @@
 @import "@styles/Variables.scss";
+
 b/* Box sizing rules */
 *,
 *::before,
@@ -76,8 +77,9 @@ select {
   }
 }
 .App {
+  // height: 100vh;
   width: 100%;
-  background: linear-gradient(to bottom, #000000, #151515, #1e1e1e);
+  // background: linear-gradient(to bottom, #000000, #151515, #1e1e1e);
   scroll-behavior: smooth;
 }
 h1,

@@ -1,11 +1,38 @@
 import React from "react";
-import Members from "@components/Members";
+import ListMembers from "@components/ListMembers";
+
+import "@styles/AdminPannel.scss";
+import ButtonAddUser from "@components/ButtonAddUser";
 
 function AdminPannel() {
   return (
-    <section className="">
+    <section id="admin-pannel">
       <h1 className="text-8xl text-white pb-8">Admin pannel</h1>
-      <Members />
+      <div className="admin-container">
+        <div className="admin-details">
+          <details className="user-list">
+            <summary className="listTitle"> Membres de cette annee</summary>
+            <ListMembers ENDPOINT="/members" />
+          </details>
+        </div>
+
+        <div className="admin-details">
+          <details className="user-list">
+            <summary className="listTitle">
+              Membres qui ce sont pre-inscrit
+            </summary>
+            <ListMembers ENDPOINT="/registration" />
+          </details>
+        </div>
+
+        <div className="admin-details">
+          <details className="user-list">
+            <summary className="listTitle">Utilisateurs super pouvoir</summary>
+            <ListMembers ENDPOINT="/user" />
+          </details>
+        </div>
+      </div>
+      <ButtonAddUser />
     </section>
   );
 }

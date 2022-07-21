@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { api } from "@services/service";
 
-function Members() {
-  const [members, setMembers] = useState();
+function PreRegister() {
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
     api
-      .get("/members")
+      .get("/registration")
       .then((res) => {
         setMembers(res.data);
       })
@@ -17,7 +17,7 @@ function Members() {
 
   return (
     <section className="">
-      <h1>Membres de l'école</h1>
+      <h1>Membres qui ce sont pre-inscrit</h1>
       {members.map((member, i) => {
         return (
           <div i={i}>
@@ -29,4 +29,4 @@ function Members() {
   );
 }
 
-export default Members;
+export default PreRegister;

@@ -3,6 +3,10 @@ const AbstractManager = require("./AbstractManager");
 class RegistrationManager extends AbstractManager {
   static table = "pre_registration";
 
+  findAllPreMembers() {
+    return this.connection.query(`select * from  ${this.table}`);
+  }
+
   insert(regist) {
     return this.connection.query(
       `insert into ${RegistrationManager.table} (first_name, last_name, birth_date, address, postal_code, city, cellphone, cellphone_father, cellphone_mother,phone, email, plan, means_of_knowledge, hasDanced) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
