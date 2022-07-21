@@ -1,32 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, notifySuccess, notifyError } from "@services/service";
+import authentification from "@services/auth.jsx";
+
 import "react-toastify/dist/ReactToastify.css";
 import "@styles/Login.scss";
 
-function Login() {
-  const ENDPOINT = "/auth/login";
+import ExportContext from "@contexts/context";
 
-  const [user, setUser] = useState({});
+function Login() {
+  const [isLog, setIsLog] = useState(false);
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    isAdmin: "",
+  });
+
+  const { setInfoUser } = useContext(ExportContext.GeneralContext);
 
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    if (isLog) {
+      navigate("/admin_back_office");
+    } else {
+      navigate("/");
+    }
+  }, [isLog]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    api
-      .post(ENDPOINT, user, {
-        withCredentials: true,
-      })
-      .then(() => {
-        notifySuccess("Vous êtes connecté!");
-        setTimeout(() => {
-          navigate("/inscription");
-        }, 1500);
-      })
-      .catch((err) => {
-        notifyError("Vous n'avez pas réussi à vous connecter.");
-        console.warn(err);
-      });
+    authentification(user, setIsLog, setInfoUser);
   };
 
   const handleChange = (e) => {

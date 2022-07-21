@@ -8,6 +8,7 @@ const {
 } = require("./controllers");
 
 const router = express.Router();
+// const {  middlewareAdmin } = require("./middleware/middlewareAdmin");
 
 router.get("/items", ItemController.browse);
 router.get("/items/:id", ItemController.read);

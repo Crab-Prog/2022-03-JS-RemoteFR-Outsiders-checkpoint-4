@@ -4,6 +4,10 @@ const GeneralContext = createContext();
 
 function GeneralProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [infoUser, setInfoUser] = useState({
+    username: sessionStorage.getItem(`username`),
+    isAdmin: sessionStorage.getItem(`isAdmin`),
+  });
 
   return (
     <GeneralContext.Provider
@@ -11,6 +15,8 @@ function GeneralProvider({ children }) {
       value={{
         isOpen,
         setIsOpen,
+        infoUser,
+        setInfoUser,
       }}
     >
       {children}

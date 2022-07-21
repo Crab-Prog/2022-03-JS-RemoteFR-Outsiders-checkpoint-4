@@ -156,17 +156,20 @@ INSERT INTO `teacher` (`teacher_id`, `first_name`, `last_name`, `birth_date`, `a
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(24) NOT NULL,
   `password` char(128) NOT NULL,
-  `admin` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `isAdmin` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `admin`) VALUES
-('admin', '664bba89fb1722f90ed283de952f1b236baaebb13fc6ae1a1540aadca136', 1),
-('djam', 'fc6f90d57c2115c7d463efed48b7e7a78b23757757816173cd810287836d373f1413', 0),
-('Ophelie', '0f096ead228121d9853f6d089bff16a75050e917d3ed2f4d3ec7f87cadabd', 0);
+INSERT INTO `user` (`id`, `username`, `password`, `isAdmin`) VALUES
+(1, 'admin', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 1),
+(2, 'djam', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 0),
+(3, 'Ophelie', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 0),
+(4, 'o.c@test.fr', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 1);
 COMMIT;

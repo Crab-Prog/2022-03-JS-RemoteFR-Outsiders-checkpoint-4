@@ -1,11 +1,9 @@
 require("dotenv").config();
-
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const AuthManager = require("../models/AuthManager");
 
 class AuthController {
-  // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes/static
   static async register(req, res) {
     try {
       const { username, password } = req.body;
@@ -29,6 +27,7 @@ class AuthController {
   static async login(req, res) {
     try {
       const { username, password } = req.body;
+
       const user = await AuthManager.getUserByUsername(username);
       if (user.length === 0) {
         return res.status(400).json({
@@ -44,11 +43,11 @@ class AuthController {
         });
       }
 
-      // je créé un token
+      // je crée un token
       const token = jwt.sign(
         {
-          id: user[0].id,
-          email: user[0].email,
+          username: user[0].username,
+          isAdmin: user[0].isAdmin,
         },
         process.env.SECRET_JWT,
         {
@@ -56,19 +55,24 @@ class AuthController {
         }
       );
 
-      res.cookie("user_wcs", token).json({
-        message: "User logged",
-      });
+      res
+        .cookie("user_insschool", token, {
+          httpOnly: true,
+          expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
+        })
+
+        .json({
+          message: "User logged",
+          cookie: token,
+          username: user[0].username,
+          isAdmin: user[0].isAdmin,
+        });
     } catch (error) {
       res.status(400).json({
         message: error.message,
       });
     }
     return null;
-  }
-
-  static async articles(req, res) {
-    res.json({ ...req.user });
   }
 }
 
