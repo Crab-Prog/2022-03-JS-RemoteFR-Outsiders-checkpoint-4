@@ -27,3 +27,10 @@
     }
   }
 }
+@media only screen and (max-width: 700px) {
+  #header-part {
+    .header-container-text {
+      top: 36px;
+    }
+  }
+}
