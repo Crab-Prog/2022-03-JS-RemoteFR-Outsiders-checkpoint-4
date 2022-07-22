@@ -1,0 +1,24 @@
+footer {
+  display: flex;
+  background-color: var(--black);
+  font-family: var(--font-family-p);
+  color: var(--white);
+  height: 4rem;
+  align-items: center;
+  justify-content: flex-end;
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .footer-text {
+      display: flex;
+      justify-content: center;
+      font-weight: 300;
+    }
+  }
+  img {
+    width: 3rem;
+  }
+}

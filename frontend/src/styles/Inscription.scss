@@ -1,0 +1,59 @@
+#inscription {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2016/12/22/09/50/music-1925056_960_720.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+
+  .box-container-inscription {
+    margin: 0 auto;
+    width: 60%;
+    max-width: 800px;
+    height: auto;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    .form-inscription {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+  label,
+  legend,
+  h2 {
+    font-weight: 600;
+  }
+  input,
+  select {
+    color: var(--black);
+    padding: 0.2rem 0.9rem;
+  }
+  .inscription-second {
+    width: 80%;
+    margin: 0 auto;
+    div {
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #inscription {
+    .box-container-inscription {
+      .form-inscription {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

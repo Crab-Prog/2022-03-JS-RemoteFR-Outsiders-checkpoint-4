@@ -1,4 +1,49 @@
 .home-header {
-  background-color: black;
+  background-color: var(--black);
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 70px), 0% 100%);
+  transition: 1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-header-alternative {
+  background-color: var(--black);
+  clip-path: none;
+  animation: fadeIn 0.9s ease-in both;
+  position: relative;
+}
+hr {
+  height: 0.2rem !important;
+  background: linear-gradient(to right, #f00, blue, #0f0);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8rem;
+    height: 4rem;
+    background: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    animation: run 15s linear infinite;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
 }

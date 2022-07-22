@@ -28,6 +28,7 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
@@ -43,7 +44,8 @@
           "@components": "./src/components",
           "@pages": "./src/pages",
           "@services": "./src/services",
-          "@styles": "./src/styles"
+          "@styles": "./src/styles",
+          "@contexts": "./src/contexts"
         },
         "extensions": [".js", ".jsx"]
       }

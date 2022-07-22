@@ -1,0 +1,29 @@
+#sch-1 {
+  margin-bottom: 8rem;
+  .schedule-gallery {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .schedule-img:hover img {
+    animation: scaleIn 0.4s forwards;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .schedule-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}
