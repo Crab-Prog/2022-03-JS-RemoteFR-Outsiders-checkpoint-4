@@ -7,7 +7,9 @@ import ButtonAddUser from "@components/ButtonAddUser";
 function AdminPannel() {
   return (
     <section id="admin-pannel">
-      <h1 className="text-8xl text-white pb-8">Admin pannel</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        Admin pannel
+      </h1>
       <div className="admin-container">
         <div className="admin-details">
           <details className="user-list">

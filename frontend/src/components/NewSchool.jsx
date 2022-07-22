@@ -6,7 +6,9 @@ import blue from "@assets/images/blue.jpg";
 function NewSchool() {
   return (
     <section className="lessons-general flex flex-col items-center">
-      <h1 className="text-8xl text-white pb-8">NewSchool</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        NewSchool
+      </h1>
       <div className="popping-text">
         <img src={blue} alt="NewSchool man in multicolor" />
         <p>

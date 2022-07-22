@@ -9,7 +9,9 @@ import "@styles/Schedule.scss";
 function Schedule() {
   return (
     <div id="sch-1">
-      <h1 className="text-center text-8xl text-white pb-8">Planning/Tarifs</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        Planning/Tarifs
+      </h1>
       <section className="schedule-gallery flex justify-around mt-8">
         <div className="schedule-img max-w-sm rounded shadow-lg bg-white overflow-hidden">
           <img
