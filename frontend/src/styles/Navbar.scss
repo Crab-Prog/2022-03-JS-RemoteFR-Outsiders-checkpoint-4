@@ -46,10 +46,14 @@
 
     h1 {
       margin: 0.5rem 0.2rem;
-    }
+    }  
   }
 }
-
+    .login-btn{
+      width: 2rem;
+      height: 2rem;
+    filter: invert(1);
+  }
 .faq-cross {
   position: absolute;
   right: -10px;
