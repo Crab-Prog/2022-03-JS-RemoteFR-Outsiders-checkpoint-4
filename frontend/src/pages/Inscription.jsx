@@ -32,7 +32,9 @@ function Inscription() {
 
   return (
     <section id="inscription">
-      <h1 className="text-center text-8xl text-white pb-8">Inscription</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        Inscription
+      </h1>
       <div className="box-container-inscription">
         <form
           id="form-inscription"

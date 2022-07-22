@@ -18,3 +18,12 @@
     transform: scale(1.2);
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .schedule-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}

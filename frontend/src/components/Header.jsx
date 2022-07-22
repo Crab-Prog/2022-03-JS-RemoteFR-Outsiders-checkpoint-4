@@ -13,7 +13,7 @@ function Header() {
     <section id="header-part">
       <video src={smoke} autoPlay muted loop className="w-full" />
       <div className="header-container-text">
-        <h1>INS</h1>
+        <h1 className="text-sm md:text-4xl lg:text-8xl">INS</h1>
         <p>L’école des danses actuelles</p>
         <button
           onClick={handleClick}

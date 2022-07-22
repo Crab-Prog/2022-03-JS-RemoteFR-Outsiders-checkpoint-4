@@ -6,7 +6,9 @@ import yellow from "@assets/images/yellow.jpg";
 function Popping() {
   return (
     <section className="lessons-general flex flex-col items-center">
-      <h1 className="text-8xl text-white pb-8">Popping</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        Popping
+      </h1>
       <div className="popping-text">
         <img src={yellow} alt="popping man in yellow" />
         <p>

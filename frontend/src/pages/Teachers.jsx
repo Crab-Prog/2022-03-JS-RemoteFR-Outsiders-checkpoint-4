@@ -11,7 +11,9 @@ import "@styles/Teachers.scss";
 function Teachers() {
   return (
     <section className="flex flex-col items-center">
-      <h1 className="text-8xl text-white pb-8">Intervenants</h1>
+      <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
+        Intervenants
+      </h1>
       <div id="teachers-gallery">
         <div className="teacher-hover">
           <div className="see-hover">
