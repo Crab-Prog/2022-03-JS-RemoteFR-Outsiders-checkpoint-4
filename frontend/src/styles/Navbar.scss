@@ -12,7 +12,13 @@
   .login-btn {
     position: absolute;
     right: 0;
+    top: 15px;
+    right: 20px;
+    width: 2rem;
+    height: 2rem;
+    filter: invert(1);
   }
+
   .logo-img {
     height: 3rem;
     width: auto;
@@ -39,6 +45,7 @@
         background-color: #101010;
       }
     }
+
     .hover-nav:hover,
     summary:hover {
       color: #ffd13c;
@@ -46,14 +53,10 @@
 
     h1 {
       margin: 0.5rem 0.2rem;
-    }  
+    }
   }
 }
-    .login-btn{
-      width: 2rem;
-      height: 2rem;
-    filter: invert(1);
-  }
+
 .faq-cross {
   position: absolute;
   right: -10px;
@@ -87,9 +90,11 @@ summary {
     height: 100vh;
     letter-spacing: 0.1rem;
   }
+
   .menu-wrapper nav {
     width: 10%;
   }
+
   .navigation .menu-toggle {
     position: absolute;
     z-index: 2;
@@ -136,10 +141,12 @@ summary {
     opacity: 1;
     visibility: visible;
   }
+
   .hide {
     opacity: 0;
     visibility: hidden;
   }
+
   .navigation-bar {
     position: fixed;
     top: 0;
@@ -167,6 +174,7 @@ summary {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0%);
   }

@@ -8,7 +8,6 @@ import "@styles/Login.scss";
 import ExportContext from "@contexts/context";
 
 function Login() {
-  const [setIsLog] = useState(false);
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -29,7 +28,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    authentification(user, setIsLog, setInfoUser);
+    authentification(user, setInfoUser);
     navigate("/admin_back_office");
   };
 
