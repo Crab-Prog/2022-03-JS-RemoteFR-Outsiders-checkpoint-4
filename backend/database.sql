@@ -55,7 +55,7 @@ INSERT INTO `member` (`member_id`, `first_name`, `last_name`, `birth_date`, `add
 
 DROP TABLE IF EXISTS `pre_registration`;
 CREATE TABLE IF NOT EXISTS `pre_registration` (
-  `pre_registration_id` smallint UNSIGNED NOT NULL,
+  `pre_registration_id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `birth_date` date NOT NULL,
@@ -69,27 +69,29 @@ CREATE TABLE IF NOT EXISTS `pre_registration` (
   `email` varchar(100) DEFAULT NULL,
   `plan` enum('QUARTERLY','ANNUAL') DEFAULT NULL,
   `means_of_knowledge` enum('POSTER_FLYER','INTERNET','WORD_OF_MOUTH','ADVERTISING_PANEL') NOT NULL,
+  `hasDanced` tinyint DEFAULT '0',
   PRIMARY KEY (`pre_registration_id`),
   KEY `last_name` (`last_name`,`first_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=726 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `pre_registration`
 --
 
-INSERT INTO `pre_registration` (`pre_registration_id`, `first_name`, `last_name`, `birth_date`, `address`, `postal_code`, `city`, `cellphone`, `cellphone_father`, `cellphone_mother`, `phone`, `email`, `plan`, `means_of_knowledge`) VALUES
-(709, 'David', 'Lancelot', '1992-05-19', '1 rue sous les Cézeaux', '63000', 'Clermont-Ferrand', '', '', '', '', 'david@gmail.com', 'QUARTERLY', 'WORD_OF_MOUTH'),
-(710, 'Benjamine', 'BENET', '2003-12-17', 'Résidence des augustins', '63170', 'Aubière', '07 00 12 86 90', '', '', '', 'benjnet23@gmail.com', NULL, 'INTERNET'),
-(711, 'louis', 'gillet', '2014-08-01', '7 rue des Fontaines', '63119', 'chateaugay', '', '06 37 48 00 07', '06 33 30 40 97', '', 'bg.bg@gmail.com', 'QUARTERLY', 'INTERNET'),
-(712, 'Laura', 'Hillairet', '2000-03-03', '41 Rue Gustave Flaubert', '63870', 'ORCINES', '06 00 08 82 75', '', '', '', 'laulae07@gmail.com', NULL, 'INTERNET'),
-(715, 'Claire', 'Dinis', '1972-02-27', '88 place des 3 Fontaines', '63360', 'Gerzat', '06 63 72 00 11', '', '', '', 'clinis@gmail.com', NULL, 'INTERNET'),
-(716, 'Fabrice', 'Stievenard', '1970-05-02', '1 Rue du 19 mars 1962Du Point Du Jour', '63300', 'Thiers', '', '', '', '', '', NULL, 'WORD_OF_MOUTH'),
-(717, 'Elie', 'Dudek', '1999-11-06', '13 boulevard Gustave Flaubert', '63000', 'Clermont-Ferrand', '07 00 05 86 57', '', '', '', 'eliek@gmail.com', 'QUARTERLY', 'INTERNET'),
-(718, 'chloé', 'botti', '1993-07-27', '31 AVENUE JOSEPH CLAUSSAT', '63000', 'CLERMONT FERRAND', '06 66 00 72 00', '', '', '', 'chloi@hotmail.fr', 'QUARTERLY', 'INTERNET'),
-(719, 'Franck', 'TEISSEDRE', '1966-04-22', '11, rue du quartier', '63200', 'Le Cheix sur Morge', '06 98 00 63 00', '', '', '', 'fraedre@wanadoo.fr', NULL, 'INTERNET'),
-(722, 'Chanelle', 'Geoffroy', '2014-10-29', '14 Rue maurice pourchon', '63000', 'Clermont-Ferrand', '', '07 00 73 11 31', '07 00 27 18 61', '09 00 80 81 61', 'min1@gmail.com', NULL, 'INTERNET'),
-(723, 'DELPHINE', 'CHAIZE', '1989-05-06', '16 boulevard du Général Crochet', '63400', 'Chamalières', '06 75 47 87 00', '', '', '', 'chaine@gmail.com', NULL, 'INTERNET'),
-(724, 'Charlotte', 'Faury', '1995-07-27', '25 avenue du Point Du Jour', '63400', 'Chamalieres', '06 70 00 14 82', '', '', '', 'charloy@gmail.com', 'QUARTERLY', 'INTERNET');
+INSERT INTO `pre_registration` (`pre_registration_id`, `first_name`, `last_name`, `birth_date`, `address`, `postal_code`, `city`, `cellphone`, `cellphone_father`, `cellphone_mother`, `phone`, `email`, `plan`, `means_of_knowledge`, `hasDanced`) VALUES
+(709, 'David', 'Lancelot', '1992-05-19', '1 rue sous les Cézeaux', '63000', 'Clermont-Ferrand', '', '', '', '', 'david@gmail.com', 'QUARTERLY', 'WORD_OF_MOUTH', 0),
+(710, 'Benjamine', 'BENET', '2003-12-17', 'Résidence des augustins', '63170', 'Aubière', '07 00 12 86 90', '', '', '', 'benjnet23@gmail.com', NULL, 'INTERNET', 0),
+(711, 'louis', 'gillet', '2014-08-01', '7 rue des Fontaines', '63119', 'chateaugay', '', '06 37 48 00 07', '06 33 30 40 97', '', 'bg.bg@gmail.com', 'QUARTERLY', 'INTERNET', 0),
+(712, 'Laura', 'Hillairet', '2000-03-03', '41 Rue Gustave Flaubert', '63870', 'ORCINES', '06 00 08 82 75', '', '', '', 'laulae07@gmail.com', NULL, 'INTERNET', 0),
+(715, 'Claire', 'Dinis', '1972-02-27', '88 place des 3 Fontaines', '63360', 'Gerzat', '06 63 72 00 11', '', '', '', 'clinis@gmail.com', NULL, 'INTERNET', 0),
+(716, 'Fabrice', 'Stievenard', '1970-05-02', '1 Rue du 19 mars 1962Du Point Du Jour', '63300', 'Thiers', '', '', '', '', '', NULL, 'WORD_OF_MOUTH', 0),
+(717, 'Elie', 'Dudek', '1999-11-06', '13 boulevard Gustave Flaubert', '63000', 'Clermont-Ferrand', '07 00 05 86 57', '', '', '', 'eliek@gmail.com', 'QUARTERLY', 'INTERNET', 0),
+(718, 'chloé', 'botti', '1993-07-27', '31 AVENUE JOSEPH CLAUSSAT', '63000', 'CLERMONT FERRAND', '06 66 00 72 00', '', '', '', 'chloi@hotmail.fr', 'QUARTERLY', 'INTERNET', 0),
+(719, 'Franck', 'TEISSEDRE', '1966-04-22', '11, rue du quartier', '63200', 'Le Cheix sur Morge', '06 98 00 63 00', '', '', '', 'fraedre@wanadoo.fr', NULL, 'INTERNET', 0),
+(722, 'Chanelle', 'Geoffroy', '2014-10-29', '14 Rue maurice pourchon', '63000', 'Clermont-Ferrand', '', '07 00 73 11 31', '07 00 27 18 61', '09 00 80 81 61', 'min1@gmail.com', NULL, 'INTERNET', 0),
+(723, 'DELPHINE', 'CHAIZE', '1989-05-06', '16 boulevard du Général Crochet', '63400', 'Chamalières', '06 75 47 87 00', '', '', '', 'chaine@gmail.com', NULL, 'INTERNET', 0),
+(724, 'Charlotte', 'Faury', '1995-07-27', '25 avenue du Point Du Jour', '63400', 'Chamalieres', '06 70 00 14 82', '', '', '', 'charloy@gmail.com', 'QUARTERLY', 'INTERNET', 0),
+(725, 'MY', 'ORGA', '2022-07-14', '20 rue st gorges', '20000', 'laLand', NULL, NULL, NULL, '0755667788', 'uneadresse@hello.fr', NULL, 'WORD_OF_MOUTH', 0);
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` char(128) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `user`
@@ -171,5 +173,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `isAdmin`) VALUES
 (1, 'admin', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 1),
 (2, 'djam', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 0),
 (3, 'Ophelie', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 0),
-(4, 'o.c@test.fr', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 1);
+(4, 'o.c@test.fr', '$2b$10$ZokJC9PwVGrCXqVo.ublZO7xpSgkmkTPgNJ6LoXDXnzz5QmqRKjm2', 1),
+(5, 'o.cc@test.fr', '$2b$10$W/WgORwDfKmhUGZdB7uh.uRDveCOOgt5FYyg/YAxR/YfqsePtRCjK', 0),
+(6, 'opheliee', '$2b$10$0RUxRSMaczNWTNSK7FX6rurEb9O9O7EsihFxV.xRMdNBSLp9025Qi', 0),
+(7, 'johndoe', '$2b$10$w0ckFh7.QLbbSH/7FaKuxedjwWH1HcJBE2eSL4rrMqfs/7a1xJxNC', 0);
 COMMIT;
