@@ -35,7 +35,17 @@
       .drop-down-menu {
         position: absolute;
         z-index: 2;
+        padding: 0.5rem;
+        background-color: #101010;
       }
+    }
+    .hover-nav:hover,
+    summary:hover {
+      color: #ffd13c;
+    }
+
+    h1 {
+      margin: 0.5rem 0.2rem;
     }
   }
 }
@@ -60,7 +70,6 @@ summary {
   display: block;
   text-align: left;
   padding: 0 1rem;
-  border-top: 0.4rem solid #000;
   cursor: pointer;
 }
 
