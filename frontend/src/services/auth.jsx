@@ -1,6 +1,6 @@
 import { api, notifySuccess, notifyError } from "@services/service";
 
-const authentification = (user, setIsLog, setInfoUser) => {
+const authentification = (user, setInfoUser) => {
   const ENDPOINT = "/auth/login";
   api
     .post(ENDPOINT, user, { withCredentials: true })
@@ -12,7 +12,6 @@ const authentification = (user, setIsLog, setInfoUser) => {
       sessionStorage.setItem(`username`, response.data.username);
       sessionStorage.setItem(`isAdmin`, response.data.isAdmin);
       notifySuccess("La connection a réussi");
-      setIsLog(true);
     })
     .catch(() => {
       notifyError(

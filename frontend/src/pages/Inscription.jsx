@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { api, notifySuccess, notifyError } from "@services/service";
 import "@styles/Inscription.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 function Inscription() {
   const [registration, setRegistration] = useState({});
-  const navigate = useNavigate();
 
   const handleSubmit = (e, regist) => {
     e.preventDefault();
@@ -14,7 +12,7 @@ function Inscription() {
       .post("/registration", regist)
       .then(() => {
         notifySuccess("Vous venez de vous pré-inscrire");
-        navigate("/inscription");
+        e.target.reset();
       })
       .catch(() => {
         notifyError(
