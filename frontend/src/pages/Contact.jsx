@@ -18,6 +18,7 @@ function Contact() {
   };
 
   const handleSubmit = (e) => {
+    const form = document.getElementById("formID");
     e.preventDefault();
     api
       .post("/mail", messageValue)
@@ -25,6 +26,7 @@ function Contact() {
         notifySuccess(
           "Votre message a bien été envoyé. Un administrateur vous contactera bientôt."
         );
+        form.reset();
       })
       .catch(() => {
         notifyError("Votre message n'a pas pu être envoyé.");
@@ -33,7 +35,7 @@ function Contact() {
 
   return (
     <section id="contact-form">
-      <form method="post">
+      <form method="post" id="formID">
         <div className="register_form">
           <h1>Nous vous invitons à remplir ce formulaire</h1>
           <div>

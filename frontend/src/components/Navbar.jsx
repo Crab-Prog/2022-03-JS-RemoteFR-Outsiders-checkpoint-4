@@ -8,7 +8,7 @@ import "@styles/Navbar.scss";
 
 function Navbar() {
   const { isOpen, setIsOpen } = useContext(ExportContext.GeneralContext);
-
+  const { isVisible, setIsVisible } = useContext(ExportContext.GeneralContext);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -16,6 +16,9 @@ function Navbar() {
   };
   const handleNavigateHome = () => {
     navigate("/");
+  };
+  const handleChangeNav = () => {
+    setIsVisible(false);
   };
 
   return (
@@ -35,8 +38,8 @@ function Navbar() {
             <h1>Accueil</h1>
           </NavLink>
 
-          <details>
-            <summary>
+          <details open={handleChangeNav}>
+            <summary onClick={() => setIsVisible(true)}>
               <p>Cours</p>
               <img
                 src="https://www.svgrepo.com/show/167358/cross.svg"
@@ -44,35 +47,69 @@ function Navbar() {
                 className="faq-cross"
               />
             </summary>
-            <div className="drop-down-menu">
-              <NavLink to="/cours_popping" className="hover-nav">
-                <h1>Popping</h1>
-              </NavLink>
-              <NavLink to="/cours_locking" className="hover-nav">
-                <h1>Locking</h1>
-              </NavLink>
-              <NavLink to="/cours_new-school" className="hover-nav">
-                <h1>New School</h1>
-              </NavLink>
-              <NavLink to="/cours_dancehall" className="hover-nav">
-                <h1>Dancehall</h1>
-              </NavLink>
-            </div>
+            {isVisible ? (
+              <div className="drop-down-menu">
+                <NavLink
+                  to="/cours_popping"
+                  className="hover-nav"
+                  onClick={handleChangeNav}
+                >
+                  <h1>Popping</h1>
+                </NavLink>
+                <NavLink
+                  to="/cours_locking"
+                  className="hover-nav"
+                  onClick={handleChangeNav}
+                >
+                  <h1>Locking</h1>
+                </NavLink>
+                <NavLink
+                  to="/cours_new-school"
+                  className="hover-nav"
+                  onClick={handleChangeNav}
+                >
+                  <h1>New School</h1>
+                </NavLink>
+                <NavLink
+                  to="/cours_dancehall"
+                  className="hover-nav"
+                  onClick={handleChangeNav}
+                >
+                  <h1>Dancehall</h1>
+                </NavLink>
+              </div>
+            ) : null}
           </details>
 
-          <NavLink to="/planning_tarifs" className="hover-nav">
+          <NavLink
+            to="/planning_tarifs"
+            className="hover-nav"
+            onClick={handleChangeNav}
+          >
             <h1>Planning/Tarifs</h1>
           </NavLink>
 
-          <NavLink to="/intervenants" className="hover-nav">
+          <NavLink
+            to="/intervenants"
+            className="hover-nav"
+            onClick={handleChangeNav}
+          >
             <h1>Intervenants</h1>
           </NavLink>
 
-          <NavLink to="/contact" className="hover-nav">
+          <NavLink
+            to="/contact"
+            className="hover-nav"
+            onClick={handleChangeNav}
+          >
             <h1>Contact</h1>
           </NavLink>
 
-          <NavLink to="/inscription" className="hover-nav">
+          <NavLink
+            to="/inscription"
+            className="hover-nav"
+            onClick={handleChangeNav}
+          >
             <h1>Inscription</h1>
           </NavLink>
         </ul>
