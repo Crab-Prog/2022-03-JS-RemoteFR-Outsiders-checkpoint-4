@@ -10,6 +10,7 @@ function GeneralProvider({ children }) {
   });
 
   const [isUpdate, setIsUpdate] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   return (
     <GeneralContext.Provider
@@ -21,6 +22,8 @@ function GeneralProvider({ children }) {
         setInfoUser,
         isUpdate,
         setIsUpdate,
+        isVisible,
+        setIsVisible,
       }}
     >
       {children}
