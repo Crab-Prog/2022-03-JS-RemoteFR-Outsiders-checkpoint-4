@@ -1,7 +1,7 @@
 import React from "react";
 import YoutubeVideo from "@components/YoutubeVideo";
 import "@styles/Popping.scss";
-import pink from "@assets/images/pink.jpg";
+import pink from "@assets/images/pink.webp";
 
 function Dancehall() {
   return (

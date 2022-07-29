@@ -1,7 +1,7 @@
 import React from "react";
 import YoutubeVideo from "@components/YoutubeVideo";
 import "@styles/Popping.scss";
-import yellow from "@assets/images/yellow.jpg";
+import yellow from "@assets/images/yellow.webp";
 
 function Popping() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import YoutubeVideo from "@components/YoutubeVideo";
 import "@styles/Popping.scss";
-import multicolor from "@assets/images/multicolor.jpg";
+import multicolor from "@assets/images/multicolor.webp";
 
 function Locking() {
   return (

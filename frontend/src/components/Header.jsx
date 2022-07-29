@@ -1,5 +1,5 @@
 import React from "react";
-import smoke from "@assets/videos/smoke.mp4";
+import smoke from "@assets/videos/smoke.webm";
 import { useNavigate } from "react-router-dom";
 import "@styles/Header.scss";
 
