@@ -1,6 +1,6 @@
 import React from "react";
-import schedule from "@assets/images/planning-2022-scaled.jpg";
-import price from "@assets/images/planning-tarif.jpg";
+import schedule from "@assets/images/planning-2022-scaled.webp";
+import price from "@assets/images/planning-tarif.webp";
 
 import pdfTarif from "@assets/pdf/Plaquette-2022.pdf";
 import pdfPlanning from "@assets/pdf/planning-2022.pdf";

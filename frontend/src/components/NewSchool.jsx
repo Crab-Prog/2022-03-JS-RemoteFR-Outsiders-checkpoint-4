@@ -1,7 +1,7 @@
 import React from "react";
 import YoutubeVideo from "@components/YoutubeVideo";
 import "@styles/Popping.scss";
-import blue from "@assets/images/blue.jpg";
+import blue from "@assets/images/blue.webp";
 
 function NewSchool() {
   return (
