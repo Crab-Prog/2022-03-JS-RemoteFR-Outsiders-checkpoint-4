@@ -1,9 +1,9 @@
 import React from "react";
 import years from "@assets/images/10years.png";
 import "@styles/HomeInfos.scss";
-import dance1 from "@assets/images/dance1.jpg";
-import dance5 from "@assets/images/dance5.jpg";
-import dance4 from "@assets/images/dance4.jpg";
+import dance1 from "@assets/images/dance1.webp";
+import dance5 from "@assets/images/dance5.webp";
+import dance4 from "@assets/images/dance4.webp";
 
 function HomeInfos() {
   return (
