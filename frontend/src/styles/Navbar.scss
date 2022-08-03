@@ -80,7 +80,13 @@ summary {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
+  .faq-cross {
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .menu-wrapper nav ul {
     display: flex;
     justify-content: space-around;
@@ -99,6 +105,7 @@ summary {
     position: absolute;
     z-index: 2;
     top: 0;
+    right: 10px;
     width: 50%;
     height: 60px;
     cursor: pointer;
@@ -141,7 +148,9 @@ summary {
     opacity: 1;
     visibility: visible;
   }
-
+  .faq-cross {
+    visibility: visible;
+  }
   .hide {
     opacity: 0;
     visibility: hidden;
