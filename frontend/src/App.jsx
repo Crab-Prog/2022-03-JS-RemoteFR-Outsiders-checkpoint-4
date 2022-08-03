@@ -50,8 +50,8 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
       <ToastContainer />
+      <Footer />
     </div>
   );
 }

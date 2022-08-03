@@ -11,14 +11,15 @@ function Navbar() {
   const { isVisible, setIsVisible } = useContext(ExportContext.GeneralContext);
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    navigate("/authentification");
-  };
+  // const handleNavigate = () => {
+  //   navigate("/authentification");
+  // };
   const handleNavigateHome = () => {
     navigate("/");
   };
   const handleChangeNav = () => {
     setIsVisible(false);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -114,9 +115,9 @@ function Navbar() {
           </NavLink>
         </ul>
       </nav>
-      <button type="button" className="login-btn" onClick={handleNavigate}>
+      {/* <button type="button" className="login-btn" onClick={handleNavigate}>
         <img src="https://www.svgrepo.com/show/219333/login.svg" alt="" />
-      </button>
+      </button> */}
     </div>
   );
 }

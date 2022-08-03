@@ -1,10 +1,10 @@
 import React from "react";
 
-import djamel from "@assets/images/djamel2.jpg";
-import eve from "@assets/images/eve2.jpg";
-import deem from "@assets/images/deem2.jpg";
-import sophie from "@assets/images/sophie-herve2.jpg";
-import mariel from "@assets/images/mariel2.jpg";
+import djamel from "@assets/images/djamel2.webp";
+import eve from "@assets/images/eve2.webp";
+import deem from "@assets/images/deem2.webp";
+import sophie from "@assets/images/sophie-herve2.webp";
+import mariel from "@assets/images/mariel2.webp";
 
 import "@styles/Teachers.scss";
 

@@ -1,5 +1,5 @@
 .lessons-general {
-  background-image: url("../assets/images/background.jpg");
+  background-image: url("../assets/images/background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -43,6 +43,9 @@
     .popping-text {
       img {
         width: 10%;
+      }
+      p {
+        padding: 0.5rem;
       }
     }
   }
