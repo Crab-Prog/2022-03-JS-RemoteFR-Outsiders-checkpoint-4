@@ -36,7 +36,6 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -80,6 +79,7 @@ select {
   width: 100%;
   scroll-behavior: smooth;
   overflow: hidden;
+  background: linear-gradient(to bottom, #000000, #151515, #1e1e1e);
 }
 h1,
 h2,

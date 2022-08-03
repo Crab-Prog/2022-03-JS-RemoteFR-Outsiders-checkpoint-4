@@ -12,7 +12,7 @@ function Schedule() {
       <h1 className="text-sm md:text-4xl lg:text-8xl text-center text-white pb-8">
         Planning/Tarifs
       </h1>
-      <section className="schedule-gallery flex justify-around mt-8">
+      <section className="schedule-gallery flex justify-evenly mt-8">
         <div className="schedule-img max-w-sm rounded shadow-lg bg-white overflow-hidden">
           <img
             className=" w-full"
@@ -32,7 +32,7 @@ function Schedule() {
             type="button"
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center w-full"
           >
-            <a href={pdfPlanning} download className="button-hover flex">
+            <a href={pdfPlanning} download className="button-hover flex w-full">
               <svg
                 className="fill-current w-4 h-4 mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,14 +51,14 @@ function Schedule() {
             <p className="text-gray-700 text-base">
               Plaquette des tarifs. Suite à la pandémie mondiale, de nouveaux
               abonnements on été créé: trimestriel, annuel, au mois ou au
-              ticket! Possibilté de régler en CB, chèque ou espèce.
+              ticket! Possibilité de régler en CB, chèque ou espèce.
             </p>
           </div>
           <button
             type="button"
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 mb-2 rounded inline-flex items-center w-full"
           >
-            <a href={pdfTarif} download className="button-hover flex">
+            <a href={pdfTarif} download className="button-hover flex w-full">
               <svg
                 className="fill-current w-4 h-4 mr-2"
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 import React from "react";
-import years from "@assets/images/10years.png";
+import years from "@assets/images/10years.webp";
 import "@styles/HomeInfos.scss";
 import dance1 from "@assets/images/dance1.webp";
 import dance5 from "@assets/images/dance5.webp";
